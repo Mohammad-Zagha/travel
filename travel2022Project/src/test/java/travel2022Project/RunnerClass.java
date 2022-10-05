@@ -1,5 +1,6 @@
 package travel2022Project;
 
+
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.Cucumber;
@@ -12,6 +13,6 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
     monochrome=true,
     snippets=SnippetType.CAMELCASE,
     glue= {"travel2022Project"})
-public class LoginTest {
+public class RunnerClass {
 
 }
