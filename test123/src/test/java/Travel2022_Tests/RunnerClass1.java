@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
  // plugin = {summary""html:target/cucumber/wikipedia.html"},
 monochrome=true,
 snippets=SnippetType.CAMELCASE,
-glue = { "Travel2022_Tests.edu"})
+glue = { "Travel2022_Tests"})
 public class RunnerClass1 {
 
 }
