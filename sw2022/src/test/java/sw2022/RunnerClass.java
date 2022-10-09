@@ -7,9 +7,14 @@ import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "use_case", plugin = {
-		"html:target/cucumber/wikipedia.html" }, monochrome = true, snippets = SnippetType.CAMELCASE , 
-				glue = {"sw2022" })
+@CucumberOptions(
+		features = "C:\\Users\\Rosol Tuhul\\git\\travel2\\sw2022\\use_case\\login.feature",
+		plugin = {"rosol",
+				"json:target/MyReports/report.json",
+				"junit:target/MyReports/report.xml" },
+		monochrome = false, 
+		glue = {"sw2022" },
+		dryRun=false)
 public class RunnerClass {
 
 }
