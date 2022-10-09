@@ -17,13 +17,14 @@ public class login {
 	System.out.println("user navigates on registration page");
 	}
 @When("user enters following user details")
-public void user_enters_following_user_details(DataTable dataTable) {
+public void user_enters_following_user_details(DataTable dataTable)
+{
 	List<List<String>> userList=dataTable.asLists(String.class);
 for(List<String> e: userList)
 {System.out.println(e);}
 }
 
-@Then("user registration sould be successful")
+@Then("user registration should be successful")
 public void user_registration_should_be_successful() {}
 
 }
