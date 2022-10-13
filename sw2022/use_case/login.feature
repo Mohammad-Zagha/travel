@@ -1,13 +1,11 @@
 Feature: User Registration
-Scenario: User registratioin with differnet data
-
-Given User is on registration page
-
-When User enters following user details
-| rosol | tuhul | rosol@gmail.com |999 | Nablus |
-| mohammad | zagha | mhm@gmail.com |939 | Nablus |
-| amer | zagha | amer@gmail.com |959 | Nablus |
-
+Scenario: User registratioin with Right data
+Given that the user enters the username "mohammad" and password "zagha"
+And  the user is one of the following users
+|rosol   | tuhul  |
+|mohammad | zagha |
+|amer     | zagha|
+And the user is Logged out
 
 Then user registration should be successful
 
