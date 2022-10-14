@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -24,8 +25,15 @@ boolean flag=false;
 
 @Given("that the user enters the username {string} and password {string}")
 public void that_the_user_enters_the_username_and_password(String string, String string2) {
-	user="mohammad";
-	password="zagha";
+	System.out.println("please enter your user name:");
+	Scanner sc= new Scanner(System.in); //System.in is a standard input stream  
+	String str= sc.nextLine(); 
+	user=str;
+	
+	System.out.println("please enter your Password:");
+	Scanner sc1= new Scanner(System.in); //System.in is a standard input stream  
+	String str1= sc1.nextLine();
+	password=str1;
 	tempUser=new User(user,password);
 }
 
