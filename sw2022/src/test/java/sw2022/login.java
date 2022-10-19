@@ -17,7 +17,8 @@ import static org.junit.Assert.assertTrue;
 
 public class login 
 {
-ArrayList<User> userList=new ArrayList<User>();
+
+
 String user;
 String password;
 User tempUser ;

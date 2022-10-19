@@ -1,9 +1,14 @@
 package sw2022;
 
+import java.util.ArrayList;
+
 public class User {
 protected String UserName;
 protected String PassWord;
+protected String email;
+protected String phone;
 protected Boolean LogInStatus;
+protected ArrayList<Trip> UserTrips = new ArrayList<>();
 public User(String UserName,String PassWord)
 {
 	this.PassWord=PassWord;
@@ -30,8 +35,10 @@ public void login(String user,String password) {
 	{
 		LogInStatus=false;
 	}
-	
-	
-}
 
+}
+public String getPassword()
+{
+	return this.PassWord;
+}
 }
