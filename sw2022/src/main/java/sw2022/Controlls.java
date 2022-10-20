@@ -46,7 +46,7 @@ public class Controlls {
 		{
 			
 				MainScreen.trips.add(trip);
-				System.out.print("Here");
+				
 				return true;
 		}
 		else
@@ -89,6 +89,7 @@ public class Controlls {
 			
 		}
 		
+		
 		return result;
 		
 		}
@@ -104,7 +105,6 @@ public class Controlls {
 		{
 			
 				list.add(trip);
-
 				return true;
 		}
 		else
@@ -116,6 +116,7 @@ public class Controlls {
 	
 	
 	}
+	
 		
 	}
 

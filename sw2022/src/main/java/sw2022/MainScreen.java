@@ -23,12 +23,11 @@ public class MainScreen {
 		String Password;
 		String AdminPassword;
 		
-		Trip trip=new Trip("Maldive","Malta","some Cource");
-		Admin admin=new Admin("admin");
-		admin.login("admin");
+
 		
 		@SuppressWarnings("resource")
 		Scanner sc=new Scanner(System.in);
+		
 		
 		while (true) {
 			
@@ -87,9 +86,9 @@ public class MainScreen {
 				}
 				break;
 			case '3':
-				Controlls.addTrip(admin, trip);
-				System.out.println(trips.get(0).tripName);
-			// Signup Logic Here takes in A username,password,email and phone number and creats a user then adds it to UserList
+				
+		
+				
 			}
 		}
 

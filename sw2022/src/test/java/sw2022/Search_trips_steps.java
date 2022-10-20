@@ -60,7 +60,7 @@ ArrayList<String> tempList;
 		boolean flag=true;
 		for(int i=0;i<tempList.size();i++)
 		{
-			FirstWord=tempList.get(0).split(" ")[0]; // take First Word of all Trips (Trip name)
+			FirstWord=tempList.get(i).split(" ")[0]; // take First Word of all Trips (Trip name)
 			if(!FirstWord.equals("Aqaba")){
 				flag=false;
 			}

@@ -16,18 +16,21 @@ public class addtripAdmin {
 
 Admin admin=new Admin("admin");
  Trip trip1;
-ArrayList<Trip> trips=new ArrayList<>();
+ArrayList<Trip> tripsList=new ArrayList<>();
 	@Given("that the Admin is logged in")
 	public void that_the_admin_is_logged_in() {
 		admin.login("admin");
 	}
 	@Given("there is a trip with country {string} , airport {string} , and TripCource {string}")
 	public void there_is_a_trip_with_country_airport_and_trip_cource(String string, String string2, String string3) {
+		
 		trip1=new Trip("Maldive","Malta","some Cource");
 	}
+	
 	@When("the trip is added to the tripList")
 	public void the_trip_is_added_to_the_trip_list() {
-		if((Controlls.addTrip(admin, trip1,trips)))
+		
+		if((Controlls.addTrip(admin, trip1,tripsList)))
 		{
 			assertTrue(true);
 		}
@@ -39,7 +42,7 @@ ArrayList<Trip> trips=new ArrayList<>();
 	}
 	@Then("the trip with  country {string} , airport {string} , and and TripCource {string} should show up")
 	public void the_trip_with_country_airport_and_and_trip_cource_should_show_up(String string, String string2, String string3) {
-		System.out.print(trips.get(0).tripName+"/"+trips.get(0).airport+"/"+trips.get(0).tripCource);
+		System.out.print(tripsList.get(0).tripName+"/"+tripsList.get(0).airport+"/"+tripsList.get(0).tripCource);
 	}
 
 

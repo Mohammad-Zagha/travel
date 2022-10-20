@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "use_case/UserHistorySearch.feature",
+		features = "use_case/tripSearch.feature",
 		plugin = {"pretty",
 				"json:target/MyReports/report.json",
 				"junit:target/MyReports/report.xml" },

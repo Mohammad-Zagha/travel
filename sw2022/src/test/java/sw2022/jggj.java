@@ -1,4 +1,4 @@
-package sw2022;
+ackage sw2022;
 
 public class jggj {
 
