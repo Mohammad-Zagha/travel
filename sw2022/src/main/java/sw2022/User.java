@@ -15,6 +15,14 @@ public User(String UserName,String PassWord)
 	this.UserName=UserName;
 	this.LogInStatus=false; // User is Logged out at first 
 }
+public User(String UserName,String PassWord,String email,String phone)
+{
+	this.PassWord=PassWord;
+	this.UserName=UserName;
+	this.email=email;
+	this.phone=phone;
+	this.LogInStatus=false; // User is Logged out at first 
+}
 public boolean getLoginStatus()
 {
 	
