@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controlls {
+	
 	public static User isUser(String userName ,ArrayList<User> list) 
 	{
 		
@@ -19,6 +20,18 @@ public class Controlls {
 		}
 		return null;
 	}
+	
+	
+	public static User singup(String userName , String password , String email , String phone) {
+		User temp = new User(userName,password , email ,phone);
+		
+		return temp;
+	}
+	
+	
+	
+	
+	
 	public static ArrayList<String> getTripNames(User user,Admin Admin)
 	{	
 		if(Admin.isLogged)
@@ -117,8 +130,63 @@ public class Controlls {
 	
 	}
 	
+	
+	
+	public static boolean jointrip(User user , Trip trip,ArrayList<Trip> list )
+	{
+			
+		if ( user.getLoginStatus() )
+		{
+			
+				list.add(trip);
+				return true;
+		}
+		else
+		{
+			System.out.println("the admin is not logged in");
+			return false;
+		}
+		
+	
+	
+	}
+	
+	
+	
+	
+	public static  boolean sameinfo(String userName ,ArrayList<User> list) 
+	{
+		
+		int flag=0;
+		for(int i=0;i<list.size();i++)
+		{
+			
+			System.out.print(list.get(i).UserName);
+			System.out.print("\t");
+			if( list.get(i).UserName.equals(userName))
+			{
+				flag =1;
+				
+			}
+			else {
+				flag=0;
+				
+			}
+			
+		}
+		if(flag==1) {
+			return true;
+		}
+		else return false;
+	
+	}
+	public static ArrayList<User> registeredUsers = new ArrayList<User>();
 		
 	}
+
+		
+	
+
 
 	
 

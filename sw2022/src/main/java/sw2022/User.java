@@ -9,6 +9,9 @@ protected String email;
 protected String phone;
 protected Boolean LogInStatus;
 protected ArrayList<Trip> UserTrips = new ArrayList<>();
+public User() {
+}
+
 public User(String UserName,String PassWord)
 {
 	this.PassWord=PassWord;
