@@ -1,33 +1,25 @@
 package sw2022;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Locale;
+import io.cucumber.java.it.Date;
 
-import java.util.ArrayList;
-
-public class Trip {
-
+public class Trip  {
+	String destination;
+	String airportNOW;
+	String tripID;
+	boolean registered;
+	LocalDate registeringDate;
 	
-	protected String tripName;
-	protected String airport;
-	protected String tripCource;
-  
-	
-
-	Trip(String tripName ,String airport ,String tripCource)
-	{
-		this.tripName = tripName;
-		this.airport=airport;
-		this.tripCource=tripCource;
-	
-	}
-	
-
-	Trip(){
+	public Trip() {
 		
 	}
-	
-	
-	
-	
-	
-
-
+	public Trip(String d,String a,String I) {
+		destination=d;
+		airportNOW=a;
+		tripID=I;
+		registered =false;
+	    registeringDate=LocalDate.now();
+	}
 }
+
