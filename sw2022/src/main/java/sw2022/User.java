@@ -74,7 +74,7 @@ public class User {
 						table.put(this.ID, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
-						JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
+						//JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
 
 						return true;
 					}
@@ -89,7 +89,7 @@ public class User {
 						table.put(this.ID, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
-						JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
+						//JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
 						return true;
 					}
 					

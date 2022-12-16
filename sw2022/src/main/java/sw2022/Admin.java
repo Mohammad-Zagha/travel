@@ -73,7 +73,7 @@ public class Admin {
 		
 		if(logState==false) {
 			
-			JOptionPane.showInternalMessageDialog(null, "Admin login is required", "Error", JOptionPane.ERROR_MESSAGE);
+			//JOptionPane.showInternalMessageDialog(null, "Admin login is required", "Error", JOptionPane.ERROR_MESSAGE);
 			return "Admin login is required";
 		}
 		else {
