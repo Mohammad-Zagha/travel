@@ -45,6 +45,7 @@ public class SearchSteps {
 	public void the_user_searches_for_the_text(String string) {
 	      Result=Tt.tripIDSearch(string);
 	}
+	
 
 	@Then("the trip with tripID {string} is found")
 	public void the_trip_with_tripID_is_found(String string) {

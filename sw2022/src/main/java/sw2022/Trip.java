@@ -11,6 +11,11 @@ public class Trip  {
 	boolean registered;
 	LocalDate registeringDate;
 	
+	
+//	String datew;
+//	String daytt;
+//	String namet;
+	
 	public Trip() {
 		
 	}
@@ -21,5 +26,11 @@ public class Trip  {
 		registered =false;
 	    registeringDate=LocalDate.now();
 	}
+//	public void Tripdate(String d,String dayt,String n) {
+//		datew=d;
+//		daytt=dayt;
+//		namet=n;
+//	}
+	
 }
 
