@@ -13,7 +13,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		monochrome = false, 
 		glue = {"sw2022" },
 		dryRun=false)
-public class RunnerClass {
+public class AcceptanceTest {
 
 }
  
