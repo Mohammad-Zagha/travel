@@ -1,43 +1,42 @@
 package sw2022;
 
-import java.io.File;
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class dateSteps {
-String date="",temppath="";
-Scanner s=new Scanner(System.in);
-String path="flights/";
+public class AvailableDatesSteps {
+    private static final String DATE_FORMAT = "dd-MM-yyyy";
+    private static final Map<String, String> AVAILABLE_DATES = new HashMap<>();
+    static {
+        AVAILABLE_DATES.put("24-11-2017", "Palestine");
+        AVAILABLE_DATES.put("25-11-2017", "Maldive");
+        AVAILABLE_DATES.put("26-11-2017", "Chicago");
+        AVAILABLE_DATES.put("28-11-2017", "Istanbul");
+    }
 
-	public dateSteps() {
-		// TODO Auto-generated constructor stub
-	}
-	
-	@Given("that user enter the date of journey in dd-mm-yyyy format :")
-	public void that_user_enter_the_date_of_journey_in_dd_mm_yyyy_format() {
-	    // Write code here that turns the phrase above into concrete actions
-	   // throw new io.cucumber.java.PendingException();
-		
-		 boolean B=false;
-		    while(B==false)
-		    {
-		     date=s.next();
-		     temppath=path+date;
-		     File f2=new File(temppath);
-		     B=f2.isDirectory();
-		     if(B!=true)
-		       System.err.printf("choose a date from the available dates in (dd-mm-yyyy) format : ");
-		     break;
-		    }
-	}
+    private String date;
+    private String flight;
 
+    @Given("that user enter the date of journey in dd-mm-yyyy format")
+    public void user_enter_date_in_dd_mm_yyyy_format() {
+        // Set the date in the dd-mm-yyyy format
+        this.date = "24-11-2017";
+    }
+
+    @Given("the date is in the available dates table")
+    public void date_is_in_available_dates_table() {
+        // Check if the date is in the available dates table
+        if (AVAILABLE_DATES.containsKey(this.date)) {
+            // Set the flight for the date
+            this.flight = AVAILABLE_DATES.get(this.date);
+        }
+    }
 	@Given("user is loged in to the system")
 	public void user_is_loged_in_to_the_system() {
-	    // Write code here that turns the phrase above into concrete actions
-	   // throw new io.cucumber.java.PendingException();
+	    // Write code here that turns the phrase above into concrete action
 	}
 
 	@When("user enters the date")

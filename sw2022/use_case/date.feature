@@ -1,29 +1,22 @@
-Feature: Available Dates:
-  
+Feature: Available Dates
 
-  
-  Scenario: searching for date successfuly
-    Given that user enter the date of journey in dd-mm-yyyy format :
-    And user is loged in to the system
-    When user enters the date
-    Then the flight with the date will appear 
-    
-    
-    Scenario: searching for date unsuccessfuly
-    Given that user enter the date of journey in different date format :
-    And user is loged in to the system
-    When user enters the date
-    Then error messege "please,choose a date from the available dates in (dd-mm-yyyy) format :" 
-   
-    #
-    #	| Palestine | Casablanka |T1 |
-#		| Chicago | Heathrow |T2 |
-#		| Istanbul | Jordan | T3 |
-#		| Maldive | Cairo | T4 |
- 
+Scenario: Searching for date successfully
+  Given the user has entered a date in the dd-mm-yyyy format
+  And the date is listed in the available dates table
+  When the user searches for the date
+  Then the flight for that date should be displayed
 
-    Examples:                       
-      | November 2017  | Mon     |Tue    |Wed    |Thu      |Fri     |Sat |Sun | 
-      | days           | 24      |  25   |26     |27       |28      |29  |30  |
-      |flights         |Palestine|Maldive|Chicago|         |Istanbul|    |    |
-      
+Scenario: Searching for date unsuccessfully
+  Given the user has entered a date in a different format
+  When the user searches for the date
+  Then an error message should be displayed, stating that the date must be in the dd-mm-yyyy format and must be one of the available dates
+
+Examples:
+  | Date       | Day | Flights     |
+  | 24-11-2017 | Mon | Palestine   |
+  | 25-11-2017 | Tue | Maldive     |
+  | 26-11-2017 | Wed | Chicago     |
+  | 27-11-2017 | Thu |             |
+  | 28-11-2017 | Fri | Istanbul    |
+  | 29-11-2017 | Sat |             |
+  | 30-11-2017 | Sun |             |
