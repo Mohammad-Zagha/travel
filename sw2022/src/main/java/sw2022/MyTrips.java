@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class MyTrips {
 	public ArrayList<Trip> trips =new ArrayList<Trip>();
 	public static ArrayList<User>registeredUsers =new ArrayList<User>();
 	
-	public static Hashtable<String,ArrayList<Trip>>registered=new Hashtable<String, ArrayList<Trip>>();
+	public static HashMap<String,ArrayList<Trip>>registered=new HashMap<String, ArrayList<Trip>>();
 	Trip b,c,d;
 	int fine;
 	

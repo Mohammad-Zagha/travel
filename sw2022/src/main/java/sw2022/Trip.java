@@ -15,7 +15,7 @@ public class Trip  {
 //	String datew;
 //	String daytt;
 //	String namet;
-	
+	  
 	public Trip() {
 		
 	}

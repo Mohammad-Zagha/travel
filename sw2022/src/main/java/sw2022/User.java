@@ -1,6 +1,7 @@
 package sw2022;
 import io.cucumber.java.it.Date;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class User {
 			
 	} 
 	
-	public boolean register(Trip t,ArrayList<Trip> trips,Hashtable<String, ArrayList<Trip>> table) {
+	public boolean register(Trip t,ArrayList<Trip> trips,HashMap<String,ArrayList<Trip>> registered) {
 		//myLibrary Tt=new myLibrary();
 		boolean User=false;
 		boolean Trip=false;
@@ -69,9 +70,9 @@ public class User {
 				}
 				else {
 					ArrayList<Trip>tt=new ArrayList<Trip>();
-					if(table.containsKey(this.ID)==false) {
+					if(registered.containsKey(this.ID)==false) {
 						tt.add(t);
-						table.put(this.ID, tt);
+						registered.put(this.ID, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
 						//JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
@@ -79,14 +80,14 @@ public class User {
 						return true;
 					}
 					else {
-						tt=table.get(this.ID);
+						tt=registered.get(this.ID);
 						if(tt.size()==5) {
 					//		JOptionPane.showInternalMessageDialog(null, "Sorry, this user registered 5 trips the maximum allowed number", "Error", JOptionPane.ERROR_MESSAGE);
 							return false;
 						}
 						else {
 						tt.add(t);
-						table.put(this.ID, tt);
+						registered.put(this.ID, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
 						//JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
@@ -118,7 +119,6 @@ public class User {
 							w.remove(i);
 							b.registered=false;
 							l.registered.put(this.ID, w);
-					//		JOptionPane.showInternalMessageDialog(null, "user returned the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
 							return " user returned the trip successfully";
 						}
 						
@@ -134,7 +134,6 @@ public class User {
 		else
 			return " " ;
 	
-		
 		}
 	
 	public int countFine(int x) {
