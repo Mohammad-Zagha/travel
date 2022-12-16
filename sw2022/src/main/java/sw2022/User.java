@@ -59,12 +59,12 @@ public class User {
 			}
 			}
 			if(Trip==false) {
-				JOptionPane.showInternalMessageDialog(null, "This trip is not available in the touristSystem", "Error", JOptionPane.ERROR_MESSAGE);
+			//	JOptionPane.showInternalMessageDialog(null, "This trip is not available in the touristSystem", "Error", JOptionPane.ERROR_MESSAGE);
 				return false;
 			}
 			else {
 				if(t.registered==true) {
-					JOptionPane.showInternalMessageDialog(null, "you cant register this trip because it is fullRegistered", "Error", JOptionPane.ERROR_MESSAGE);
+				//	JOptionPane.showInternalMessageDialog(null, "you cant register this trip because it is fullRegistered", "Error", JOptionPane.ERROR_MESSAGE);
 					return false;
 				}
 				else {
@@ -81,7 +81,7 @@ public class User {
 					else {
 						tt=table.get(this.ID);
 						if(tt.size()==5) {
-							JOptionPane.showInternalMessageDialog(null, "Sorry, this user registered 5 trips the maximum allowed number", "Error", JOptionPane.ERROR_MESSAGE);
+					//		JOptionPane.showInternalMessageDialog(null, "Sorry, this user registered 5 trips the maximum allowed number", "Error", JOptionPane.ERROR_MESSAGE);
 							return false;
 						}
 						else {
@@ -118,7 +118,7 @@ public class User {
 							w.remove(i);
 							b.registered=false;
 							l.registered.put(this.ID, w);
-							JOptionPane.showInternalMessageDialog(null, "user returned the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
+					//		JOptionPane.showInternalMessageDialog(null, "user returned the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
 							return " user returned the trip successfully";
 						}
 						

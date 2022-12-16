@@ -113,7 +113,7 @@ public boolean checkUser(User u) {
 		}
 	}
 	
-		JOptionPane.showInternalMessageDialog(null, "This user is not registered before in the touristSystem", "Error", JOptionPane.ERROR_MESSAGE);
+	//	JOptionPane.showInternalMessageDialog(null, "This user is not registered before in the touristSystem", "Error", JOptionPane.ERROR_MESSAGE);
 		return false;
 	
 }
@@ -125,7 +125,7 @@ public boolean register(Trip b,User u) {
 		f=lateTripps(u, 21);
 		if(f==false) {
 			if(u.countFine(getFine())!=0) {
-				JOptionPane.showInternalMessageDialog(null, "Cant register trip,you have fines", "Error", JOptionPane.ERROR_MESSAGE);
+			//	JOptionPane.showInternalMessageDialog(null, "Cant register trip,you have fines", "Error", JOptionPane.ERROR_MESSAGE);
 				return false;
 				}
 	    	f=u.register(b, trips,registered);

@@ -79,13 +79,13 @@ public class Admin {
 		else {
 			for(int i=0;i<l.registeredUsers.size();i++) {
 				if(u.ID.equals(l.registeredUsers.get(i).ID)) {
-					JOptionPane.showInternalMessageDialog(null, "user is alreay registered", "Error", JOptionPane.ERROR_MESSAGE);
+				//	JOptionPane.showInternalMessageDialog(null, "user is alreay registered", "Error", JOptionPane.ERROR_MESSAGE);
 
 					return "user is alreay registered";
 				}
 			}
 			l.registeredUsers.add(u);
-			JOptionPane.showInternalMessageDialog(null, "user registered succefully", "success", JOptionPane.INFORMATION_MESSAGE);
+			//JOptionPane.showInternalMessageDialog(null, "user registered succefully", "success", JOptionPane.INFORMATION_MESSAGE);
 
 			return "user registered succefully";
 		}
@@ -99,25 +99,27 @@ public class Admin {
 	public void unregisterUser(User u,ArrayList<User>users,Hashtable<String, ArrayList<Trip>>bb ) {
 		if(logState==true) {
 			if(bb.containsKey(u.ID)) {
-				JOptionPane.showInternalMessageDialog(null, "can't remove this user,he has registered Trip", "Error", JOptionPane.ERROR_MESSAGE);
+			//	JOptionPane.showInternalMessageDialog(null, "can't remove this user,he has registered Trip", "Error", JOptionPane.ERROR_MESSAGE);
 				return;
 			}
 			else if(u.countFine(30)!=0) {
-				JOptionPane.showInternalMessageDialog(null, "can't remove this user,he has unpaid fines", "Error", JOptionPane.ERROR_MESSAGE);
+			//	JOptionPane.showInternalMessageDialog(null, "can't remove this user,he has unpaid fines", "Error", JOptionPane.ERROR_MESSAGE);
 
 			}
 			else {
 				for(int i=0;i<users.size();i++) {
 					if(u.ID.equals(users.get(i).ID)) {
 						users.remove(i);
-						JOptionPane.showInternalMessageDialog(null, "user unregistered succefully", "success", JOptionPane.INFORMATION_MESSAGE);
+				//		JOptionPane.showInternalMessageDialog(null, "user unregistered succefully", "success", JOptionPane.INFORMATION_MESSAGE);
 
 					}
 				}
 			}
 		}
-		else
-			JOptionPane.showInternalMessageDialog(null, "admin login required", "Error", JOptionPane.ERROR_MESSAGE);
+		else {
+			//JOptionPane.showInternalMessageDialog(null, "admin login required", "Error", JOptionPane.ERROR_MESSAGE);
+		}
+			
 
 		
 	}
