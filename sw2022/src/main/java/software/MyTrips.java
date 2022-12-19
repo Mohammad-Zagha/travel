@@ -10,12 +10,12 @@ import java.util.logging.Logger;
 import java.time.Duration;
 
 public class MyTrips {
-	final Logger logger = Logger.getLogger(Main.class.getName());
+	final Logger logger = Logger.getLogger(MyTrips.class.getName());
 
 	public List<Trip> trips =new ArrayList<>();
-	public static ArrayList<User>registeredUsers =new ArrayList<User>();
+	public static  List<User>registeredUsers =new ArrayList<User>();
 	
-	public static final HashMap<String,ArrayList<Trip>> registered = new HashMap<String, ArrayList<Trip>>();
+	public static final HashMap<String,ArrayList<Trip>> registered = new HashMap< >();
 	Trip bbb;
 	Trip c;
 	Trip d;
@@ -102,7 +102,7 @@ public  int getFine() {
 public boolean checkUser(User u) {
 	
 	for (int i=0;i<registeredUsers.size();i++) {
-		if (registeredUsers.get(i).ID.equals(u.ID)) {
+		if (registeredUsers.get(i).IdforUser.equals(u.IdforUser)) {
 			
 			return true;
 		}
@@ -141,8 +141,8 @@ public boolean lateTripps(User u,int day) {
 	Duration diff;
 	long difference;
 	ArrayList<Trip>x=new ArrayList<Trip>();
-	if(registered.containsKey(u.ID)) {
-		x=registered.get(u.ID);
+	if(registered.containsKey(u.IdforUser)) {
+		x=registered.get(u.IdforUser);
 		for(int i=0;i<x.size();i++) {
 	diff=Duration.between( x.get(i).registeringDate.atStartOfDay(),today.atStartOfDay());	
 

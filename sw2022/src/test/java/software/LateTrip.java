@@ -1,6 +1,7 @@
 package software;
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.text.SimpleDateFormat;
@@ -52,8 +53,8 @@ public class LateTrip {
 
 	@Then("the user has to pay a fine of {int} NIS")
 	public void the_user_has_to_pay_a_fine_of_nis(Integer int1) {
-	    int z=u.countFine(Tt.getFine());
-	    assertTrue(z==int1); 
+	    Integer z=u.countFine(Tt.getFine());
+	    assertEquals(z,int1); 
 	}
 
 }

@@ -74,7 +74,7 @@ public class UnRegisteredUserSteps {
 	    // Write code here that turns the phrase above into concrete actions
 		Trip b=new Trip();
 		   ArrayList<Trip>trips=new ArrayList<Trip>();
-		   Tt.registered.put(u.ID, trips);
+		   Tt.registered.put(u.IdforUser, trips);
 		
 		// throw new io.cucumber.java.PendingException();
 	}

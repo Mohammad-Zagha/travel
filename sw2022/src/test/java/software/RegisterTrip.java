@@ -22,7 +22,7 @@ public class RegisterTrip {
 	boolean flag;
 	Trip t1,t2;
 	public RegisterTrip(MyTrips TT) {
-		Tt=TT;// TODO Auto-generated constructor stub
+		Tt=TT;
 	}
 	
 	
@@ -141,7 +141,7 @@ assertTrue(t.registered);}
 	    //throw new io.cucumber.java.PendingException();
 		 List<Trip>x=Tt.trips;
 		    System.out.println(x.size());
-		    Tt.registered.put(u.ID, (ArrayList<Trip>) x);
+		    Tt.registered.put(u.IdforUser, (ArrayList<Trip>) x);
 	}
 	
 	

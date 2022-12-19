@@ -118,7 +118,7 @@ public class Main {
     		 	        	u=new User(id,"","","","","");
     		 	        	if(l.checkUser(u)) {
 	    		 	        	for(int i=0;i<l.registeredUsers.size();i++) {
-	    		 	        		if(l.registeredUsers.get(i).ID.equals(id))
+	    		 	        		if(l.registeredUsers.get(i).IdforUser.equals(id))
 	    		 	        			u=l.registeredUsers.get(i);
 	    		 	        	}
 	    		 	        	l.unregister(admin, u);
@@ -129,8 +129,8 @@ public class Main {
     		 	        	
     		 	        case 5:
     		 	        	for(int i=0;i<l.registeredUsers.size();i++) {
-    		 	        		logger.info(registeredUsers.get(i).ID+" "+registeredUsers.get(i).Name+" "+registeredUsers.get(i).email+" "+
-    		 	        				registeredUsers.get(i).address+" "+registeredUsers.get(i).postal_code+" "+registeredUsers.get(i).city+" ");
+    		 	        		logger.info(registeredUsers.get(i).IdforUser+" "+registeredUsers.get(i).NameUser+" "+registeredUsers.get(i).email+" "+
+    		 	        				registeredUsers.get(i).address+" "+registeredUsers.get(i).PostalCode+" "+registeredUsers.get(i).city+" ");
     		 	        	}
     		 	        	
     		 	        	break;
@@ -156,7 +156,7 @@ public class Main {
       			 u=new User(id,"","","","","");
       			 if(l.checkUser(u)) {
       				 for(int i=0;i<l.registeredUsers.size();i++) {
-      					 if(l.registeredUsers.get(i).ID.equals(id))
+      					 if(l.registeredUsers.get(i).IdforUser.equals(id))
       						 u=l.registeredUsers.get(i);
       				 }
       				 
@@ -212,14 +212,15 @@ public class Main {
 			 	        	break;
 			 	        	
 		    		    case 4:
-		    		    	ArrayList<Trip> z; //= new ArrayList<Trip>();
-		    		    	boolean f=MyTrips.registered.containsKey(u.ID);
+		    		    	ArrayList<Trip> z; 
+		    		    	boolean f=MyTrips.registered.containsKey(u.IdforUser);
 		    		    	if(!f)
 		    		    		logger.info("you dont have any registered trip yet :)");
 		    		    	else {
-		    		    		z=MyTrips.registered.get(u.ID);
+		    		    		z=MyTrips.registered.get(u.IdforUser);
 			    		    	for(int i=0;i<z.size();i++) {
-			    		    		logger.info(String.format("destination=%s airportNOW=%s tripID=%s", z.get(i).destination, z.get(i).airportNOW, z.get(i).tripID));
+			    		    		 logger.info(String.format("destination=%s airportNOW=%s tripID=%s", z.get(i).destination, z.get(i).airportNOW, z.get(i).tripID));
+			    		        
 			    		    	}
 		    		    	}
 		    		    	break;

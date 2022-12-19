@@ -9,26 +9,18 @@ public class Trip  {
 	boolean registered;
 	LocalDate registeringDate;
 	
-	
-//	String datew;
-//	String daytt;
-//	String namet;
+
 	  
 	public Trip() {
 		
 	}
-	public Trip(String d,String a,String I) {
+	public Trip(String d,String a,String IdFortrip) {
 		destination=d;
 		airportNOW=a;
-		tripID=I;
+		tripID=IdFortrip;
 		registered =false;
 	    registeringDate=LocalDate.now();
 	}
-//	public void Tripdate(String d,String dayt,String n) {
-//		datew=d;
-//		daytt=dayt;
-//		namet=n;
-//	}
 	
 }
 

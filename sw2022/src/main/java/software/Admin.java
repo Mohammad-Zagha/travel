@@ -63,7 +63,7 @@ public class Admin {
 		}
 		
 			for(int i=0;i<MyTrips.registeredUsers.size();i++) {
-				if(u.ID.equals(MyTrips.registeredUsers.get(i).ID)) {
+				if(u.IdforUser.equals(MyTrips.registeredUsers.get(i).IdforUser)) {
 
 					return "user is alreay registered";
 				}
@@ -77,7 +77,7 @@ public class Admin {
 	
 	public void unregisterUser(User u,List<User>users,Map<String, ArrayList<Trip>> registered)   {
 		
-			if(registered.containsKey(u.ID)) {
+			if(registered.containsKey(u.IdforUser)) {
 				logger.info("can't remove this user,he has registered Trip");
 				
 			}
@@ -86,7 +86,7 @@ public class Admin {
 			}
 			else {
 				for(int i=0;i<users.size();i++) {
-					if(u.ID.equals(users.get(i).ID)) {
+					if(u.IdforUser.equals(users.get(i).IdforUser)) {
 						users.remove(i);
 
 					}

@@ -1,33 +1,32 @@
 package software;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-
-//import testing.book;
-
 public class User {
-	String ID;
-	String Name;
+	
+	String IdforUser;
+	String NameUser;
 	String email;
 	String address;
-	String postal_code;
+	String PostalCode;
 	String city;
 	int lateTrips;
+	final Logger logger = Logger.getLogger(User.class.getName());
 	
 	
 	public User() {
-		System.out.println();
+		 
 	}
 	
 	public User(String id,String name,String e,String add,String postal,String c) {
-		ID=id;
-		Name=name;
+		IdforUser=id;
+		NameUser=name;
 		email=e;
 		address=add;
-		postal_code=postal;
+		PostalCode=postal;
 		city=c;
 		lateTrips=0;
 	}
@@ -36,58 +35,53 @@ public class User {
 	public class DateServer {
 
 		public LocalDate getDate() {
-			LocalDate today =  LocalDate.now();  
-			return today;
+			return LocalDate.now();  
+			
 		}
 		
 			
 	} 
 	
 	public boolean register(Trip t,List<Trip> trips,Map<String, ArrayList<Trip>> registered) {
-		//myLibrary Tt=new myLibrary();
-		boolean Trip=false;
+		
+		boolean TripSys=false;
 		DateServer d=new  DateServer();
 		Trip xx;
 		
 			for(int i=0;i<trips.size();i++) {
 				xx=trips.get(i);
        			if(t.tripID.equals(xx.tripID)==true) {
-				Trip=true;
+				TripSys=true;
 				break;
 			}
 			}
-			if(Trip==false) {
-			//	JOptionPane.showInternalMessageDialog(null, "This trip is not available in the touristSystem", "Error", JOptionPane.ERROR_MESSAGE);
+			if(TripSys==false) {
 				return false;
 			}
 			else {
 				if(t.registered==true) {
-				//	JOptionPane.showInternalMessageDialog(null, "you cant register this trip because it is fullRegistered", "Error", JOptionPane.ERROR_MESSAGE);
 					return false;
 				}
 				else {
 					ArrayList<Trip>tt=new ArrayList<Trip>();
-					if(registered.containsKey(this.ID)==false) {
+					if(registered.containsKey(this.IdforUser)==false) {
 						tt.add(t);
-						registered.put(this.ID, tt);
+						registered.put(this.IdforUser, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
-						//JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
 
 						return true;
 					}
 					else {
-						tt=registered.get(this.ID);
+						tt=registered.get(this.IdforUser);
 						if(tt.size()==5) {
-					//		JOptionPane.showInternalMessageDialog(null, "Sorry, this user registered 5 trips the maximum allowed number", "Error", JOptionPane.ERROR_MESSAGE);
 							return false;
 						}
 						else {
 						tt.add(t);
-						registered.put(this.ID, tt);
+						registered.put(this.IdforUser, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
-						//JOptionPane.showInternalMessageDialog(null, "user registered the trip successfully", "success", JOptionPane.INFORMATION_MESSAGE);
 						return true;
 					}
 					
@@ -96,7 +90,6 @@ public class User {
 			}
 			
 		}
-		//return user;
 		
 	
 	}
@@ -107,15 +100,15 @@ public class User {
 		boolean f=false;
 		for(int i=0;i<l.registeredUsers.size();i++) {
 			
-			if(this.ID.equals(l.registeredUsers.get(i).ID)) {
+			if(this.IdforUser.equals(l.registeredUsers.get(i).IdforUser)) {
 				f=true;
-				if(l.registered.containsKey(this.ID)) {
-					w=l.registered.get(this.ID);
+				if(l.registered.containsKey(this.IdforUser)) {
+					w=l.registered.get(this.IdforUser);
 					for(int j=0;j<w.size();j++) {
 						if(b.tripID.equals(w.get(j).tripID)) {
 							w.remove(i);
 							b.registered=false;
-							l.registered.put(this.ID, w);
+							l.registered.put(this.IdforUser, w);
 							return " user returned the trip successfully";
 						}
 						
@@ -125,7 +118,7 @@ public class User {
 				return "this trip is not registered by you";
 			}
 		}
-		if(f==false) {
+		if(!f) {
 		return "this user is not registered";
 		}
 		else
@@ -134,8 +127,8 @@ public class User {
 		}
 	
 	public int countFine(int x) {
-		int fine=lateTrips*x;
-		return fine;
+		return lateTrips*x;
+		
 	}
 	}
 
