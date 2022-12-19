@@ -5,6 +5,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -138,9 +139,9 @@ assertTrue(t.registered);}
 	public void this_user_has_registered_maximum_trips() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		 ArrayList<Trip>x=Tt.trips;
+		 List<Trip>x=Tt.trips;
 		    System.out.println(x.size());
-		    Tt.registered.put(u.ID, x);
+		    Tt.registered.put(u.ID, (ArrayList<Trip>) x);
 	}
 	
 	

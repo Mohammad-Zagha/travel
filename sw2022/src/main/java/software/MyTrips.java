@@ -5,20 +5,20 @@ package software;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-
-//import javax.swing.JOptionPane;
-
-
+import java.util.List;
+import java.util.logging.Logger;
 import java.time.Duration;
 
 public class MyTrips {
-	
+	final Logger logger = Logger.getLogger(Main.class.getName());
 
-	public ArrayList<Trip> trips =new ArrayList<Trip>();
+	public List<Trip> trips =new ArrayList<>();
 	public static ArrayList<User>registeredUsers =new ArrayList<User>();
 	
-	public static final HashMap<String,ArrayList<Trip>> registered = new HashMap<String, ArrayList<Trip>>();	Trip b,c,d;
+	public static final HashMap<String,ArrayList<Trip>> registered = new HashMap<String, ArrayList<Trip>>();
+	Trip bbb;
+	Trip c;
+	Trip d;
 	int fine;
 	
 	
@@ -26,8 +26,7 @@ public class MyTrips {
 	public class DateServer {
 
 		public LocalDate getDate() {
-			LocalDate today =  LocalDate.now();  
-			return today;
+			return LocalDate.now();  
 		}
 		
 			
@@ -37,9 +36,8 @@ public class MyTrips {
 	DateServer date=new DateServer();
 	
 	public void add(Trip b, Admin user) {
-		// TODO Auto-generated method stub
-		if( user.getLogState()==false) {
-			System.out.println("you can't add trips");
+		if( !user.getLogState()) {
+			logger.info("you can't add trips");
 		}
 		else {
 			trips.add(b);
@@ -47,9 +45,9 @@ public class MyTrips {
 		}
 	}
 
-	public ArrayList<Trip> tripIDSearch(String string) {
+	public List<Trip> tripIDSearch(String string) {
 		Trip b;
-		ArrayList<Trip>results=new ArrayList<Trip>();
+		ArrayList<Trip>results=new ArrayList<>();
 		for(int i=0 ;i<trips.size();i++) {
 			if(trips.get(i).tripID.contains(string)) {
 				b=trips.get(i);

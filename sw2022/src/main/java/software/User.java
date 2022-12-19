@@ -1,5 +1,7 @@
 package software;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -41,7 +43,7 @@ public class User {
 			
 	} 
 	
-	public boolean register(Trip t,ArrayList<Trip> trips,HashMap<String,ArrayList<Trip>> registered) {
+	public boolean register(Trip t,List<Trip> trips,Map<String, ArrayList<Trip>> registered) {
 		//myLibrary Tt=new myLibrary();
 		boolean Trip=false;
 		DateServer d=new  DateServer();

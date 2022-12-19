@@ -84,7 +84,7 @@ public class Main {
     		 	        	logger.info("enter the string to search by:\n");
     		 	        	String st=choice.next();
     		 	        	ArrayList<Trip>bb;
-    		 	        	bb=l.tripIDSearch(st);
+    		 	        	bb=(ArrayList<Trip>) l.tripIDSearch(st);
     		 	        	if(bb.size()==0) {
     		 	        		logger.info("no trips were found");
     		 	        	}
@@ -199,7 +199,7 @@ public class Main {
 		    		    	logger.info("enter the string to search by:\n");
 			 	        	String st=choice.next();
 			 	        	ArrayList<Trip>bb;
-			 	        	bb=l.tripIDSearch(st);
+			 	        	bb=(ArrayList<Trip>) l.tripIDSearch(st);
 			 	        	if(bb.isEmpty()) {
 			 	        		logger.info("no trips were found");
 			 	        	}

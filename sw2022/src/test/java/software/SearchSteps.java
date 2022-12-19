@@ -45,7 +45,7 @@ public class SearchSteps {
 
 	@When("the user searches for the text {string}")
 	public void the_user_searches_for_the_text(String string) {
-	      Result=Tt.tripIDSearch(string);
+	      Result=(ArrayList<Trip>) Tt.tripIDSearch(string);
 	}
 	
 
