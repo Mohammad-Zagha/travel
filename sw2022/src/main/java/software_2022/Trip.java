@@ -1,8 +1,6 @@
-package sw2022;
+package software_2022;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Locale;
-import io.cucumber.java.it.Date;
+
 
 public class Trip  {
 	String destination;

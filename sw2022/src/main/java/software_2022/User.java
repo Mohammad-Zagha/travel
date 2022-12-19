@@ -1,12 +1,8 @@
-package sw2022;
-import io.cucumber.java.it.Date;
-import java.util.Calendar;
+package software_2022;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 
 //import testing.book;
 
@@ -47,7 +43,6 @@ public class User {
 	
 	public boolean register(Trip t,ArrayList<Trip> trips,HashMap<String,ArrayList<Trip>> registered) {
 		//myLibrary Tt=new myLibrary();
-		boolean User=false;
 		boolean Trip=false;
 		DateServer d=new  DateServer();
 		Trip xx;

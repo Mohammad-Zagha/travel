@@ -1,12 +1,12 @@
-package sw2022;
+package software_2022;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import sw2022.Admin;
-import sw2022.MyTrips;
-import sw2022.Trip;
+import software_2022.Admin;
+import software_2022.MyTrips;
+import software_2022.Trip;
 
 public class AddSteps {
 	
@@ -39,7 +39,7 @@ public class AddSteps {
 
 	@Then("the trip with destination {string}, airportNOW {string}, and tripID {string} is contained in the touristSystem")
 	public void the_trip_with_destination_airportNOW_and_tripID_is_contained_in_the_library(String string, String string2, String string3) {
-	    assertTrue(l.trips.size()==1);
+		assertEquals(1, l.trips.size());
 	    assertTrue( l.isContained(string,string2,string3));
 	}
 
@@ -50,8 +50,8 @@ public class AddSteps {
 
 	@Then("the error message {string} is given")
 	public void the_error_message_is_given(String string) {
-		assertTrue(l.trips.size()==0);
-	    assertEquals(string, "Administrator login required");
+		assertEquals(0, l.trips.size());
+	    assertEquals( "Administrator login required",string);
 	}
 
 

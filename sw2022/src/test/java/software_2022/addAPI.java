@@ -1,8 +1,7 @@
-package sw2022;
+package software_2022;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;

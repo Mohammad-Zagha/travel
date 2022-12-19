@@ -25,16 +25,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-java/7.3.4/cucumber-java-7.3.4.jar" sourcepath="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-java/7.3.4/cucumber-java-7.3.4-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="io.cucumber"/>
-			<attribute name="maven.artifactId" value="cucumber-java"/>
-			<attribute name="maven.version" value="7.3.4"/>
-			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Mohammad/.m2/repository/io/cucumber/datatable/7.3.4/datatable-7.3.4.jar" sourcepath="C:/Users/Mohammad/.m2/repository/io/cucumber/datatable/7.3.4/datatable-7.3.4-sources.jar">
+	<classpathentry kind="lib" path="C:/Users/Rosol Tuhul/.m2/repository/io/cucumber/datatable/7.3.4/datatable-7.3.4.jar" sourcepath="C:/Users/Mohammad/.m2/repository/io/cucumber/datatable/7.3.4/datatable-7.3.4-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="io.cucumber"/>
@@ -43,23 +34,13 @@
 			<attribute name="maven.scope" value="compile"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-core/7.3.4/cucumber-core-7.3.4.jar" sourcepath="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-core/7.3.4/cucumber-core-7.3.4-sources.jar">
+	<classpathentry kind="lib" path="C:/Users/Rosol Tuhul/.m2/repository/io/cucumber/cucumber-java/7.3.4/cucumber-java-7.3.4.jar" sourcepath="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-core/7.3.4/cucumber-core-7.3.4-sources.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="maven.groupId" value="io.cucumber"/>
 			<attribute name="maven.artifactId" value="cucumber-core"/>
 			<attribute name="maven.version" value="7.3.4"/>
 			<attribute name="maven.scope" value="compile"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-junit/7.3.4/cucumber-junit-7.3.4.jar" sourcepath="C:/Users/Mohammad/.m2/repository/io/cucumber/cucumber-junit/7.3.4/cucumber-junit-7.3.4-sources.jar">
-		<attributes>
-			<attribute name="test" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="io.cucumber"/>
-			<attribute name="maven.artifactId" value="cucumber-junit"/>
-			<attribute name="maven.version" value="7.3.4"/>
-			<attribute name="maven.scope" value="test"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

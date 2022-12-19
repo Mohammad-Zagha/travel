@@ -1,15 +1,13 @@
-package sw2022;
+package software_2022;
 
 
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.List;
 
-import javax.swing.JOptionPane;
+
+//import javax.swing.JOptionPane;
 
 
 import java.time.Duration;
@@ -20,8 +18,7 @@ public class MyTrips {
 	public ArrayList<Trip> trips =new ArrayList<Trip>();
 	public static ArrayList<User>registeredUsers =new ArrayList<User>();
 	
-	public static HashMap<String,ArrayList<Trip>>registered=new HashMap<String, ArrayList<Trip>>();
-	Trip b,c,d;
+	public static final HashMap<String,ArrayList<Trip>> registered = new HashMap<String, ArrayList<Trip>>();	Trip b,c,d;
 	int fine;
 	
 	

@@ -1,4 +1,4 @@
-package sw2022;
+package software_2022;
 
 
 
@@ -9,9 +9,9 @@ import static org.junit.Assert.assertTrue;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import sw2022.MyTrips;
-import sw2022.Trip;
-import sw2022.User;
+import software_2022.MyTrips;
+import software_2022.Trip;
+import software_2022.User;
 
 public class ReturnSteps {
 	

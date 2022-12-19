@@ -1,4 +1,4 @@
-package sw2022;
+package software_2022;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -6,9 +6,9 @@ import static org.junit.Assert.assertTrue;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import sw2022.Admin;
-import sw2022.MyTrips;
-import sw2022.User;
+import software_2022.Admin;
+import software_2022.MyTrips;
+import software_2022.User;
 
 public class UserRegisterSteps {
 
@@ -51,7 +51,7 @@ public class UserRegisterSteps {
 
 	@When("admin tries to register a user")
 	public void admin_tries_to_register_a_user() {
-		s=a.register(u,Tt);
+		s=a.register(u);
 		after=Tt.registeredUsers.size();
 	   
 	}

@@ -1,11 +1,11 @@
-package sw2022;
+package software_2022;
 
 import static org.junit.Assert.assertFalse;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import sw2022.Admin;
+import software_2022.Admin;
 
 public class AdminLogOutSteps {
 	
