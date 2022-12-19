@@ -1,5 +1,6 @@
-package software_2022;
+package software;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -7,9 +8,10 @@ import java.util.ArrayList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import software_2022.Admin;
-import software_2022.MyTrips;
-import software_2022.Trip;
+import software.Admin;
+import software.MyTrips;
+import software.Trip;
+
 
 public class SearchSteps {
 	
@@ -50,7 +52,7 @@ public class SearchSteps {
 	@Then("the trip with tripID {string} is found")
 	public void the_trip_with_tripID_is_found(String string) {
 	    // assertTrue(Result.size()==1);
-	     assertTrue(Result.get(0).tripID.equals(string) );
+		assertEquals(string, Result.get(0).tripID);
 	     /*System.out.println(Result.size());
 			for(int i=0;i<Result.size();i++) {
 				System.out.println(Result.get(i));

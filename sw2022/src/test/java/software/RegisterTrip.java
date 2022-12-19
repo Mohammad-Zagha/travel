@@ -1,5 +1,6 @@
-package software_2022;
+package software;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -8,10 +9,10 @@ import java.util.ArrayList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import software_2022.Admin;
-import software_2022.MyTrips;
-import software_2022.Trip;
-import software_2022.User;
+import software.Admin;
+import software.MyTrips;
+import software.Trip;
+import software.User;
 
 public class RegisterTrip {
 	public User u;
@@ -181,7 +182,8 @@ assertTrue(t.registered);}
 
 	@Then("the trip with tripID {string} is not register by the user")
 	public void the_trip_with_tripID_is_not_register_by_the_user(String string) {
-		assertTrue(t1.tripID.equals(string));
+		assertEquals(string,t1.tripID);
+		
 	    assertFalse(t1.registered);
      }
 

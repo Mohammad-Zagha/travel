@@ -1,4 +1,4 @@
-package software_2022;
+package software;
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				"json:target/MyReports/report.html",
 				"junit:target/MyReports/report.xml" },
 		monochrome = false, 
-		glue = {"software_2022" },
+		glue = {"software" },
 		dryRun=false)
 public class AcceptanceTest {
 

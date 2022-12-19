@@ -1,4 +1,4 @@
-package software_2022;
+package software;
 
 import static org.junit.Assert.assertTrue;
 

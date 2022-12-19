@@ -1,9 +1,10 @@
-package software_2022;
+package software;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.*;
 public class Admin {
-	final Logger logger = Logger.getLogger(Main.class.getName());
+	final Logger logger = Logger.getLogger(Admin.class.getName());
 
 
 	boolean logState;
@@ -56,7 +57,7 @@ public class Admin {
 	
 
 	public String register(User u) {
-		if(logState==false)
+		if(!logState)
 		{
 			return "Admin login is required";
 		}
@@ -74,12 +75,11 @@ public class Admin {
 		
 	
 	
-	public void unregisterUser(User u,ArrayList<User>users,HashMap<String, ArrayList<Trip>>bb ) {
+	public void unregisterUser(User u,List<User>users,Map<String, ArrayList<Trip>> registered)   {
 		
-			if(bb.containsKey(u.ID)) {
+			if(registered.containsKey(u.ID)) {
 				logger.info("can't remove this user,he has registered Trip");
 				
-				return ;
 			}
 			else if(u.countFine(30)!=0) {
 				logger.info("can't remove this user,he has unpaid fines");

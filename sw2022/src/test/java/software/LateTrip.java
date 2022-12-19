@@ -1,4 +1,4 @@
-package software_2022;
+package software;
 
 
 import static org.junit.Assert.assertTrue;
@@ -9,9 +9,9 @@ import java.util.Calendar;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import software_2022.MyTrips;
-import software_2022.Trip;
-import software_2022.User;
+import software.MyTrips;
+import software.Trip;
+import software.User;
 
 public class LateTrip {
 	 User u=new User("1234567","Rosol","rosol@gmail.com ","Rr street","M5M2T5","Nablus");

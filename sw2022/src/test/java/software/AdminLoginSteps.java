@@ -1,8 +1,8 @@
-package software_2022;
+package software;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import software_2022.Admin;
+import software.Admin;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

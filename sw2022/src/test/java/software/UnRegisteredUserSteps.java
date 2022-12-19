@@ -1,4 +1,4 @@
-package software_2022;
+package software;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import software_2022.Admin;
-import software_2022.MyTrips;
-import software_2022.Trip;
-import software_2022.User;
+import software.Admin;
+import software.MyTrips;
+import software.Trip;
+import software.User;
 
 public class UnRegisteredUserSteps {
 
