@@ -90,9 +90,10 @@ public class MyTrips {
 
 
 
-public void setFine(int x) {
+public int setFine(int x) {
 	
 	fine=x;
+	return fine;
 }
 
 public  int getFine() {
@@ -102,7 +103,7 @@ public  int getFine() {
 public boolean checkUser(User u) {
 	
 	for (int i=0;i<registeredUsers.size();i++) {
-		if (registeredUsers.get(i).IdforUser.equals(u.IdforUser)) {
+		if (registeredUsers.get(i).UserId.equals(u.UserId)) {
 			
 			return true;
 		}
@@ -141,8 +142,8 @@ public boolean lateTripps(User u,int day) {
 	Duration diff;
 	long difference;
 	ArrayList<Trip>x=new ArrayList<Trip>();
-	if(registered.containsKey(u.IdforUser)) {
-		x=registered.get(u.IdforUser);
+	if(registered.containsKey(u.UserId)) {
+		x=registered.get(u.UserId);
 		for(int i=0;i<x.size();i++) {
 	diff=Duration.between( x.get(i).registeringDate.atStartOfDay(),today.atStartOfDay());	
 

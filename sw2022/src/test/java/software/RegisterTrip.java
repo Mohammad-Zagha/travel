@@ -141,7 +141,7 @@ assertTrue(t.registered);}
 	    //throw new io.cucumber.java.PendingException();
 		 List<Trip>x=Tt.trips;
 		    System.out.println(x.size());
-		    Tt.registered.put(u.IdforUser, (ArrayList<Trip>) x);
+		    Tt.registered.put(u.UserId, (ArrayList<Trip>) x);
 	}
 	
 	
@@ -196,8 +196,8 @@ assertTrue(t.registered);}
 
 	@Then("the user has to pay fine of {int} NIS")
 	public void the_user_has_to_pay_fine_of_nis(Integer int1) {
-		 Tt.setFine(int1);
-		    assertTrue(u.countFine(int1)==int1);
+//	    Tt.setFine(int1);
+	    assertEquals(Tt.setFine(int1), u.countFine(int1));
 	}
 //	@When("the trip with tripID {string}")
 //	public void the_trip_with_tripID(String string) {

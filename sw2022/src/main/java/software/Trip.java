@@ -14,10 +14,10 @@ public class Trip  {
 	public Trip() {
 		
 	}
-	public Trip(String d,String a,String IdFortrip) {
+	public Trip(String d,String a,String tripId) {
 		destination=d;
 		airportNOW=a;
-		tripID=IdFortrip;
+		tripID=tripId;
 		registered =false;
 	    registeringDate=LocalDate.now();
 	}
