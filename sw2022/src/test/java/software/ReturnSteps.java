@@ -78,7 +78,7 @@ public void there_is_a_trip_with_destination_airport_now_and_trip_id(String dest
 	}
 	@When("action \\(return) happens")
 	public void action_return_happens() {
-	   s= u.returnTrip(b, l);
+	   s= u.returnTrip(b);
 	   System.out.println(s);
 	}
 

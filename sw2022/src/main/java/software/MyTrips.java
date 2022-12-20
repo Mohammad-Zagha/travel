@@ -6,16 +6,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 import java.time.Duration;
 
 public class MyTrips {
 	final Logger logger = Logger.getLogger(MyTrips.class.getName());
-
-	public List<Trip> trips =new ArrayList<>();
-	public static  List<User>registeredUsers =new ArrayList<User>();
-	
-	public static final HashMap<String,ArrayList<Trip>> registered = new HashMap< >();
+    public List<Trip> trips =new ArrayList<>();
+	protected static final List<User> registeredUsers = new ArrayList<>();
+	protected static final Map<String, ArrayList<Trip>> registered = new HashMap<>();
 	Trip bbb;
 	Trip c;
 	Trip d;
@@ -103,13 +102,11 @@ public  int getFine() {
 public boolean checkUser(User u) {
 	
 	for (int i=0;i<registeredUsers.size();i++) {
-		if (registeredUsers.get(i).UserId.equals(u.UserId)) {
+		if (registeredUsers.get(i).userId.equals(u.userId)) {
 			
 			return true;
 		}
 	}
-	
-	//	JOptionPane.showInternalMessageDialog(null, "This user is not registered before in the touristSystem", "Error", JOptionPane.ERROR_MESSAGE);
 		return false;
 	
 }
@@ -119,12 +116,11 @@ public boolean register(Trip b,User u) {
 	boolean f=checkUser(u);
 	if(f) {
 		f=lateTripps(u, 21);
-		if(f==false) {
+		if(!f) {
 			if(u.countFine(getFine())!=0) {
-			//	JOptionPane.showInternalMessageDialog(null, "Cant register trip,you have fines", "Error", JOptionPane.ERROR_MESSAGE);
 				return false;
 				}
-	    	f=u.register(b, trips,registered);
+	    	f=u.register(b, trips,registered,u);
 			return f;
 		}
 		else return false;
@@ -141,9 +137,9 @@ public boolean lateTripps(User u,int day) {
 	LocalDate today=date.getDate();
 	Duration diff;
 	long difference;
-	ArrayList<Trip>x=new ArrayList<Trip>();
-	if(registered.containsKey(u.UserId)) {
-		x=registered.get(u.UserId);
+	ArrayList<Trip>x;
+	if(registered.containsKey(u.userId)) {
+		x=registered.get(u.userId);
 		for(int i=0;i<x.size();i++) {
 	diff=Duration.between( x.get(i).registeringDate.atStartOfDay(),today.atStartOfDay());	
 

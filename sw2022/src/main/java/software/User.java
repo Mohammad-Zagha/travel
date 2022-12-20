@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class User {
 	
-	String UserId;
-	String name_user;
+	String userId;
+	String userName;
 	String email;
 	String address;
 	String postalCode;
@@ -22,8 +22,8 @@ public class User {
 	}
 	
 	public User(String id,String name,String e,String add,String postal,String c) {
-		UserId=id;
-		name_user=name;
+		userId=id;
+		userName=name;
 		email=e;
 		address=add;
 		postalCode=postal;
@@ -42,72 +42,61 @@ public class User {
 			
 	} 
 	
-	public boolean register(Trip t,List<Trip> trips,Map<String, ArrayList<Trip>> registered) {
+	public boolean register(Trip t,List<Trip> trips,Map<String, ArrayList<Trip>> registered,User u) {
 		
-		boolean TripSys=false;
+		boolean tripSys=false;
 		DateServer d=new  DateServer();
 		Trip xx;
 		
 			for(int i=0;i<trips.size();i++) {
 				xx=trips.get(i);
        			if(t.tripID.equals(xx.tripID)) {
-				TripSys=true;
+				tripSys=true;
 				break;
 			}
 			}
-			if(!TripSys) {
+			if(!tripSys||t.registered) {
 				return false;
 			}
-			else {
-				if(t.registered) {
-					return false;
-				}
-				else {
-					ArrayList<Trip>tt=new ArrayList<>();
-					if(!registered.containsKey(this.UserId)) {
+			 ArrayList<Trip>tt=new ArrayList<>();
+					if(!registered.containsKey(u.userId)) {
 						tt.add(t);
-						registered.put(this.UserId, tt);
+						registered.put(u.userId, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
 
 						return true;
 					}
-					else {
-						tt=registered.get(this.UserId);
+					
+						tt=registered.get(u.userId);
 						if(tt.size()==5) {
 							return false;
 						}
 						else {
 						tt.add(t);
-						registered.put(this.UserId, tt);
+						registered.put(u.userId, tt);
 						t.registered=true;
 						t.registeringDate=d.getDate();
 						return true;
-					}
+					
 					
 				}
 					
 			}
-			
-		}
-		
-	
-	}
 	
 	
-	public String returnTrip(Trip b, MyTrips l) {
+	
+	public String returnTrip(Trip b) {
 	    ArrayList<Trip> w;
 	    for (int i = 0; i < MyTrips.registeredUsers.size(); i++) {
-	        if (this.UserId.equals(MyTrips.registeredUsers.get(i).UserId)) {
-	            if (MyTrips.registered.containsKey(this.UserId)) {
-	                w = MyTrips.registered.get(this.UserId);
-	                for (int j = 0; j < w.size(); j++) {
-	                    if (b.tripID.equals(w.get(j).tripID)) {
-	                        w.remove(i);
-	                        b.registered = false;
-	                        MyTrips.registered.put(this.UserId, w);
-	                        return "user returned the trip successfully";
-	                    }
+	        if (this.userId.equals(MyTrips.registeredUsers.get(i).userId)) {
+	            if (MyTrips.registered.containsKey(this.userId)) {
+	                w = MyTrips.registered.get(this.userId);
+	                if (hasTrip(w, b)) {
+	                    w.remove(i);
+	                    b.registered = false;
+	                    MyTrips.registered.put(this.userId, w);
+	                    return "user returned the trip successfully";
 	                }
 	                return "this trip is not registered by you";
 	            }
@@ -115,6 +104,15 @@ public class User {
 	        }
 	    }
 	    return "this user is not registered";
+	}
+	
+	private boolean hasTrip(List<Trip> trips, Trip b) {
+	    for (int j = 0; j < trips.size(); j++) {
+	        if (b.tripID.equals(trips.get(j).tripID)) {
+	            return true;
+	        }
+	    }
+	    return false;
 	}
 	
 	public int countFine(int x) {

@@ -110,7 +110,7 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 				 	        	u=new User(id,"","","","","");
 				 	        	if(l.checkUser(u)) {
 					 	        	for(int i=0;i<l.registeredUsers.size();i++) {
-					 	        		if(l.registeredUsers.get(i).UserId.equals(id))
+					 	        		if(l.registeredUsers.get(i).userId.equals(id))
 					 	        			u=l.registeredUsers.get(i);
 					 	        	}
 					 	        	l.unregister(admin, u);
@@ -121,7 +121,7 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 				 	        	
 				 	        case 5:
 				 	        	for(int i=0;i<l.registeredUsers.size();i++) {
-				 	        		logger.info(registeredUsers.get(i).UserId+" "+registeredUsers.get(i).UserId+" "+registeredUsers.get(i).email+" "+
+				 	        		logger.info(registeredUsers.get(i).userId+" "+registeredUsers.get(i).userId+" "+registeredUsers.get(i).email+" "+
 				 	        				registeredUsers.get(i).address+" "+registeredUsers.get(i).postalCode+" "+registeredUsers.get(i).city+" ");
 				 	        	}
 				 	        	
@@ -147,9 +147,9 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 						 String id=choice2.next();
 						 u=new User(id,"","","","","");
 						 if(l.checkUser(u)) {
-							 for(int i=0;i<l.registeredUsers.size();i++) {
-								 if(l.registeredUsers.get(i).UserId.equals(id))
-									 u=l.registeredUsers.get(i);
+							 for(int i=0;i<MyTrips.registeredUsers.size();i++) {
+								 if(MyTrips.registeredUsers.get(i).userId.equals(id))
+									 u=MyTrips.registeredUsers.get(i);
 							 }
 							 
 							while(true) {
@@ -183,7 +183,7 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 							    	logger.info("enter the trip number:\n");
 							    	String codd=choice2.next();
 							    	b=new Trip("","",codd);
-							    	u.returnTrip(b, l);
+							    	u.returnTrip(b);
 							    	
 							    	break;
 							    	
@@ -195,21 +195,23 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 						        	if(bb.isEmpty()) {
 						        		logger.info("no trips were found");
 						        	}
-						        	else {
-						        		logger.info("these trips has been found:");
-						 	        	for(int i=0; i<bb.size();i++) {
-						 	        		logger.info(String.format("destination=%s airportNOW=%s tripID=%s", bb.get(i).destination, bb.get(i).airportNOW, bb.get(i).tripID));				 	        	}
+						        	for (int i = 0; i < bb.size(); i++) {
+						        	    if (!bb.isEmpty()) {
+						        	        logger.info(String.format("destination=%s airportNOW=%s tripID=%s", bb.get(i).destination, bb.get(i).airportNOW, bb.get(i).tripID));
+						        	    }
 						        	}
+						        	
+						        	
 						        	
 						        	break;
 						        	
 							    case 4:
 							    	ArrayList<Trip> z; 
-							    	boolean f=MyTrips.registered.containsKey(u.UserId);
+							    	boolean f=MyTrips.registered.containsKey(u.userId);
 							    	if(!f)
 							    		logger.info("you dont have any registered trip yet :)");
 							    	else {
-							    		z=MyTrips.registered.get(u.UserId);
+							    		z=MyTrips.registered.get(u.userId);
 								    	for(int i=0;i<z.size();i++) {
 								    		 logger.info(String.format("destination=%s airportNOW=%s tripID=%s", z.get(i).destination, z.get(i).airportNOW, z.get(i).tripID));
 								        

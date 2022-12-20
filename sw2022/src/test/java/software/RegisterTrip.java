@@ -141,7 +141,7 @@ assertTrue(t.registered);}
 	    //throw new io.cucumber.java.PendingException();
 		 List<Trip>x=Tt.trips;
 		    System.out.println(x.size());
-		    Tt.registered.put(u.UserId, (ArrayList<Trip>) x);
+		    Tt.registered.put(u.userId, (ArrayList<Trip>) x);
 	}
 	
 	
@@ -206,7 +206,7 @@ assertTrue(t.registered);}
 
 	@When("the user returns the trip with tripID {string}")
 	public void the_user_returns_the_trip_with_tripID(String string) {
-		  u.returnTrip(t2, Tt);	
+		  u.returnTrip(t2);	
 		  }
 
 }
