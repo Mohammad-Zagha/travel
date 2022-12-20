@@ -59,7 +59,7 @@ public class Main {
 				 	        	String s=obj.readLine();
 				 	        	String []ss=s.split(" ");
 				 	        	u=new User(ss[0],ss[1],ss[2],ss[3],ss[4],ss[5]);
-				 	        	if (admin.register(u)=="user is alreay registered") {
+				 	        	if (admin.register(u).equals("user is already registered")) {
 				 	        		  logger.info("user is alreay registered");
 				 	        		}
 				 	        	else { logger.info(admin.register(u));}
@@ -78,10 +78,9 @@ public class Main {
 				 	        		logger.info("no trips were found");
 				 	        	}
 				 	        	else {
-				 	        		//destination,airportNOW or tripID
 				 	        		logger.info("these trips are found:");
 					 	        	for(int i=0; i<bb.size();i++) {
-logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airportNOW+" tripID="+bb.get(i).tripID);
+					 	        		logger.info(String.format("destination=%s airportNow=%s tripID=%s", bb.get(i).destination, bb.get(i).airportNOW, bb.get(i).tripID));
  
 					 	        		
 					 	        	}
@@ -93,8 +92,8 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 				 	        	
 				 	        	logger.info("please enter trip destination,name of the airport you want to leave from and trip number respectively and seperated by space:\n");
 				 	        	try {
-				 	        		String TripSystem=obj.readLine();
-				 	        		String []arrTrip=TripSystem.split(" ");
+				 	        		String tripSystem=obj.readLine();
+				 	        		String []arrTrip=tripSystem.split(" ");
 				 	        		b=new Trip(arrTrip[0],arrTrip[1],arrTrip[2]);
 				 	        		l.add(b, admin);
 				 	        		
@@ -109,9 +108,9 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 				 	        	String id=choice.next();
 				 	        	u=new User(id,"","","","","");
 				 	        	if(l.checkUser(u)) {
-					 	        	for(int i=0;i<l.registeredUsers.size();i++) {
-					 	        		if(l.registeredUsers.get(i).userId.equals(id))
-					 	        			u=l.registeredUsers.get(i);
+					 	        	for(int i=0;i<MyTrips.registeredUsers.size();i++) {
+					 	        		if(MyTrips.registeredUsers.get(i).userId.equals(id))
+					 	        			u=MyTrips.registeredUsers.get(i);
 					 	        	}
 					 	        	l.unregister(admin, u);
 				 	        	}else logger.info("This user is not registered before in the TouristSystem");
@@ -120,17 +119,14 @@ logger.info("destination="+bb.get(i).destination+" airportNow="+bb.get(i).airpor
 				 	        	break;
 				 	        	
 				 	        case 5:
-				 	        	for(int i=0;i<l.registeredUsers.size();i++) {
-				 	        		logger.info(registeredUsers.get(i).userId+" "+registeredUsers.get(i).userId+" "+registeredUsers.get(i).email+" "+
-				 	        				registeredUsers.get(i).address+" "+registeredUsers.get(i).postalCode+" "+registeredUsers.get(i).city+" ");
-				 	        	}
+				 	        	for(int i=0;i<MyTrips.registeredUsers.size();i++) {
+				 	        		logger.info( true? String.format("%s %s %s %s %s %s", registeredUsers.get(i).userId, registeredUsers.get(i).userId, registeredUsers.get(i).email, registeredUsers.get(i).address, registeredUsers.get(i).postalCode, registeredUsers.get(i).city) : "");				 	        	}
 				 	        	
 				 	        	break;
 				 	        	
 				 	        case 6:
 				 	        	for(int i=0;i<l.trips.size();i++){
-				 	        		logger.info("destination="+l.trips.get(i).destination+" airportNow="+l.trips.get(i).airportNOW+" code="+l.trips.get(i).tripID);
-				 	        	}
+				 	        		logger.info(String.format("destination=%s airportNow=%s code=%s", l.trips.get(i).destination, l.trips.get(i).airportNOW, l.trips.get(i).tripID));				 	        	}
 				 	        	break;
 				 	        	
 				 	       case 7:

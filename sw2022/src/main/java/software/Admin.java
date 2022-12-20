@@ -85,12 +85,11 @@ public class Admin {
 				logger.info("can't remove this user,he has unpaid fines");
 			}
 			else {
-				for(int i=0;i<users.size();i++) {
-					if(u.userId.equals(users.get(i).userId)) {
-						users.remove(i);
-
-					}
-				}
+			    for (int i = 0; i < users.size(); i++) {
+			        if (u.userId.equals(users.get(i).userId)) {
+			            users.remove(i);
+			        }
+			    }
 			}
 		}
 
